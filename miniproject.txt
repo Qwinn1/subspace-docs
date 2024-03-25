@@ -1,23 +1,37 @@
 
-For my ambassador mini project for Subspace, I would like to cite the work I have previously done in February 2024 to keep the Subspace documentation for Linux updated
-with the most current and accurate information available.  I hope that this work adequately demonstrates my "thorough understanding and competent application of the principles and concepts taught throughout the program." 
+For my ambassador mini project for Subspace, I would like to cite the work I have previously done in February 2024 to keep the Subspace
+documentation for Linux updated with the most current and accurate information available.  I hope that this work adequately demonstrates
+my "thorough understanding and competent application of the principles and concepts taught throughout the program." 
 
 The pull requests in which I updated the documentation are as follows:
 
 https://github.com/subspace/subspace-docs/pull/424
 
-The above update to the Linux documentation was a result of extensive testing of subspace farms under both XFS and ext4 filesystems.  This was done due to my encountering significant errors when attempting to resize a plot on a mostly full XFS system.  After presenting my results to Nazar and Emil in Discord, they agreed to the change of recommendations to no longer recommend xfs and to only recommend ext4 going forward.  In addition, I did testing and confirmed the viability of recommending two parameters:
+The above update to the Linux documentation was a result of extensive testing of subspace farms under both XFS and ext4 filesystems.
+This was done due to my encountering significant errors when attempting to resize a plot on a mostly full XFS system.  After presenting my
+results to Nazar and Emil in Discord, they agreed to the change of recommendations to no longer recommend xfs and to only recommend ext4
+going forward.  In addition, I did testing and confirmed the viability of recommending two parameters:
 
 1)  The -m 0 parameter, which increases usable space on an ext4 drive by 5%, with no relevant tradeoff.
-2)  the -T largefile4 parameter, which increases usable space by 1.5% and also increases the speed of e2fsck (Linux disk integrity tool used to check for and correct disk corruption and deal with hardware errors) by several orders of magnitude - and since a full read-only test by e2fsck takes about 90 minutes *with* largefile4 set, you really don't want that kind of time multiplied by several orders of magnitude.  The only tradeoff is that the drive is limited to a million files per 4TB, which is far more than subspace requires also by several orders of magnitude.
+2)  the -T largefile4 parameter, which increases usable space by 1.5% and also increases the speed of e2fsck (Linux disk integrity tool 
+used to check for and correct disk corruption and deal with hardware errors) by several orders of magnitude - and since a full read-only 
+test by e2fsck takes about 90 minutes *with* largefile4 set, you really don't want that kind of time multiplied by several orders of
+magnitude.  The only tradeoff is that the drive is limited to a million files per 4TB, which is far more than subspace requires also by
+several orders of magnitude.
 
 https://github.com/subspace/subspace-docs/pull/423
 
-In the above pull request I corrected some errors in the instructions for how to set up a subspace service as a user rather than root.  The documentation prior to correction still had most of the commands installing the service as root instead of a user.  I also updated the links in the documentation to the 3h release (the links were still pointing to a very old 3g version).
+In the above pull request I corrected some errors in the instructions for how to set up a subspace service as a user rather than root.  
+The documentation prior to correction still had most of the commands installing the service as root instead of a user.  I also updated
+the links in the documentation to the 3h release (the links were still pointing to a very old 3g version).
 
 https://github.com/subspace/subspace-docs/pull/425
 
-In the above pull request I made extensive corrections and updates to the instructions on how to open firewall rules for subspace ports.  The prior documentation was in fact not functional.  In the interest of the user's security, the instructions take pains to open the firewall to the minimum extent necessary for proper functioning of subspace.
+In the above pull request I made extensive corrections and updates to the instructions on how to open firewall rules for subspace ports.
+The prior documentation was in fact not functional.  In the interest of the user's security, the instructions take pains to open the
+firewall to the minimum extent necessary for proper functioning of subspace.
 
 
-Going forward, I intend to keep an eye on the Linux documentation and to lend a hand in keeping them updated as any errors or need to update recommendations become apparent.  I look forward to continued participation in the Ambassador program and to continue to help improve the Subspace project as a whole.
+Going forward, I intend to keep an eye on the Linux documentation and to lend a hand in keeping them updated as any errors or need to
+update recommendations become apparent.  I look forward to continued participation in the Ambassador program and to continue to help
+improve the Subspace project as a whole.
